@@ -1,0 +1,2536 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.seek.android",
+    "module": "core-test-instrumentation",
+    "version": "0.0.336",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "debugVariantDefaultApiPublication",
+      "attributes": {
+        "com.android.build.api.attributes.BuildTypeAttr": "debug",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.seek.android",
+          "module": "core-common",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-common-test",
+          "version": {
+            "requires": "0.0.336"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlinx",
+              "module": "kotlinx-coroutines-test"
+            }
+          ]
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-data",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-presentation",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core"
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit"
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules"
+        },
+        {
+          "group": "androidx.test",
+          "module": "runner"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "excludes": [
+            {
+              "group": "*",
+              "module": "protobuf-lite"
+            }
+          ]
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents"
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-test-junit4"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3"
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver"
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing"
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2024.02.01"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-tooling-preview",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-livedata-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-process",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.activity",
+          "module": "activity-compose",
+          "version": {
+            "requires": "1.8.2"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-gradle-plugin",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-runtime",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-http-cache",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "seek.braid.compose",
+          "module": "braid",
+          "version": {
+            "requires": "8.16.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-compose",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-test",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "au.com.seek.hubble",
+          "module": "hubble-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "au.com.seek.eventcatalogue",
+          "module": "data-tracking-event-catalogue",
+          "version": {
+            "requires": "4.7.0-2-gaf66208"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-api",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-test",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-gradle-plugin",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-formatting",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "8.2.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-allopen",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "joda-time",
+          "module": "joda-time",
+          "version": {
+            "requires": "2.12.7"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-android",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-androidx-compose",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-test",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jmailen.gradle",
+          "module": "kotlinter-gradle",
+          "version": {
+            "requires": "4.2.0"
+          }
+        },
+        {
+          "group": "com.lemonappdev",
+          "module": "konsist",
+          "version": {
+            "requires": "0.13.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "symbol-processing-gradle-plugin",
+          "version": {
+            "requires": "1.9.22-1.0.17"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk-agent-jvm",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi-kotlin",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp-urlconnection",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "adapter-rxjava2",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-moshi",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "robolectric",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "shadows-multidex",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit",
+          "version": {
+            "requires": "1.1.5"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.uiautomator",
+          "module": "uiautomator",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "orchestrator",
+          "version": {
+            "requires": "1.4.2"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-testing",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber",
+          "version": {
+            "requires": "5.0.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-test-instrumentation-0.0.336-debug.aar",
+          "url": "core-test-instrumentation-0.0.336-debug.aar",
+          "size": 16300,
+          "sha512": "ae745c979e5150cd98cd29eb41a53057c67300c73c4ab2b09d89c03aadf380eb6afe23a23a3109c5c57e87c53cf71b12db6d9aee0bf377e7a48c1e194a45ac09",
+          "sha256": "c24586fc0e6be6893a05776568ef58552c76aafbef939e642ef954067c6c9dd9",
+          "sha1": "6c053c3900642c38100c8e432edb9dc4811d9daf",
+          "md5": "3b402ca0c50eb2851f8bbd59a369eb1c"
+        }
+      ]
+    },
+    {
+      "name": "debugVariantDefaultRuntimePublication",
+      "attributes": {
+        "com.android.build.api.attributes.BuildTypeAttr": "debug",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber"
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-android"
+        },
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-testing"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-test-manifest"
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-common",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-common-test",
+          "version": {
+            "requires": "0.0.336"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlinx",
+              "module": "kotlinx-coroutines-test"
+            }
+          ]
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-data",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-presentation",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core"
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit"
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules"
+        },
+        {
+          "group": "androidx.test",
+          "module": "runner"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "excludes": [
+            {
+              "group": "*",
+              "module": "protobuf-lite"
+            }
+          ]
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents"
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-test-junit4"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3"
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver"
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing"
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2024.02.01"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-tooling-preview",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-livedata-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-process",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.activity",
+          "module": "activity-compose",
+          "version": {
+            "requires": "1.8.2"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-gradle-plugin",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-runtime",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-http-cache",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "seek.braid.compose",
+          "module": "braid",
+          "version": {
+            "requires": "8.16.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-compose",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-test",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "au.com.seek.hubble",
+          "module": "hubble-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "au.com.seek.eventcatalogue",
+          "module": "data-tracking-event-catalogue",
+          "version": {
+            "requires": "4.7.0-2-gaf66208"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-api",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-test",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-gradle-plugin",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-formatting",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "8.2.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-allopen",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "joda-time",
+          "module": "joda-time",
+          "version": {
+            "requires": "2.12.7"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-android",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-androidx-compose",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-test",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jmailen.gradle",
+          "module": "kotlinter-gradle",
+          "version": {
+            "requires": "4.2.0"
+          }
+        },
+        {
+          "group": "com.lemonappdev",
+          "module": "konsist",
+          "version": {
+            "requires": "0.13.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "symbol-processing-gradle-plugin",
+          "version": {
+            "requires": "1.9.22-1.0.17"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk-agent-jvm",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi-kotlin",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp-urlconnection",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "adapter-rxjava2",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-moshi",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "robolectric",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "shadows-multidex",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit",
+          "version": {
+            "requires": "1.1.5"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.uiautomator",
+          "module": "uiautomator",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "orchestrator",
+          "version": {
+            "requires": "1.4.2"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-testing",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber",
+          "version": {
+            "requires": "5.0.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-test-instrumentation-0.0.336-debug.aar",
+          "url": "core-test-instrumentation-0.0.336-debug.aar",
+          "size": 16300,
+          "sha512": "ae745c979e5150cd98cd29eb41a53057c67300c73c4ab2b09d89c03aadf380eb6afe23a23a3109c5c57e87c53cf71b12db6d9aee0bf377e7a48c1e194a45ac09",
+          "sha256": "c24586fc0e6be6893a05776568ef58552c76aafbef939e642ef954067c6c9dd9",
+          "sha1": "6c053c3900642c38100c8e432edb9dc4811d9daf",
+          "md5": "3b402ca0c50eb2851f8bbd59a369eb1c"
+        }
+      ]
+    },
+    {
+      "name": "debugVariantDefaultJavaDocPublication",
+      "attributes": {
+        "com.android.build.api.attributes.BuildTypeAttr": "debug",
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "core-test-instrumentation-0.0.336-debug-javadoc.jar",
+          "url": "core-test-instrumentation-0.0.336-debug-javadoc.jar",
+          "size": 279390,
+          "sha512": "a41b13472b03362c313b747e2f1e61f4ca29a91926a2079e8aa2916ada4a6055198e78db5921ac6ec6424bd1d8f43e1c4fc98bc846ce22195c08a00889180831",
+          "sha256": "026be31dc1a52b25689489cce001e5b1c5d2588526e15bffe32078cd4cb478e6",
+          "sha1": "a036eba17da5639a3fc5e684324ed62342940e52",
+          "md5": "ae7312de1456464644c351a83864274c"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantDefaultApiPublication",
+      "attributes": {
+        "com.android.build.api.attributes.BuildTypeAttr": "release",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.test.uiautomator",
+          "module": "uiautomator"
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-common",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-common-test",
+          "version": {
+            "requires": "0.0.336"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlinx",
+              "module": "kotlinx-coroutines-test"
+            }
+          ]
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-data",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-presentation",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core"
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit"
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules"
+        },
+        {
+          "group": "androidx.test",
+          "module": "runner"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "excludes": [
+            {
+              "group": "*",
+              "module": "protobuf-lite"
+            }
+          ]
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents"
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-test-junit4"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3"
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver"
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing"
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2024.02.01"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-tooling-preview",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-livedata-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-process",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.activity",
+          "module": "activity-compose",
+          "version": {
+            "requires": "1.8.2"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-gradle-plugin",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-runtime",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-http-cache",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "seek.braid.compose",
+          "module": "braid",
+          "version": {
+            "requires": "8.16.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-compose",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-test",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "au.com.seek.hubble",
+          "module": "hubble-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "au.com.seek.eventcatalogue",
+          "module": "data-tracking-event-catalogue",
+          "version": {
+            "requires": "4.7.0-2-gaf66208"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-api",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-test",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-gradle-plugin",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-formatting",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "8.2.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-allopen",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "joda-time",
+          "module": "joda-time",
+          "version": {
+            "requires": "2.12.7"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-android",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-androidx-compose",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-test",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jmailen.gradle",
+          "module": "kotlinter-gradle",
+          "version": {
+            "requires": "4.2.0"
+          }
+        },
+        {
+          "group": "com.lemonappdev",
+          "module": "konsist",
+          "version": {
+            "requires": "0.13.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "symbol-processing-gradle-plugin",
+          "version": {
+            "requires": "1.9.22-1.0.17"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk-agent-jvm",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi-kotlin",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp-urlconnection",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "adapter-rxjava2",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-moshi",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "robolectric",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "shadows-multidex",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit",
+          "version": {
+            "requires": "1.1.5"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.uiautomator",
+          "module": "uiautomator",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "orchestrator",
+          "version": {
+            "requires": "1.4.2"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-testing",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber",
+          "version": {
+            "requires": "5.0.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-test-instrumentation-0.0.336-release.aar",
+          "url": "core-test-instrumentation-0.0.336-release.aar",
+          "size": 15431,
+          "sha512": "dcea5c66d4e23db11743c2acbaea43d34357cf18b30a92a08fb22a7f61d911a0417a581773eb3a6c0560af42db34fa3b816cd11978fcd8555e202957f2253394",
+          "sha256": "19746265432fd303b0637b8c107a8a3495a764adfa1df956689f8cce41068f89",
+          "sha1": "4f0145ffc88b83e4e9a92267e9926aaca0e2384f",
+          "md5": "a3fc58bdced37d38d506ec0a20f8bbf3"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantDefaultRuntimePublication",
+      "attributes": {
+        "com.android.build.api.attributes.BuildTypeAttr": "release",
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.test.uiautomator",
+          "module": "uiautomator"
+        },
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber"
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-android"
+        },
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-testing"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-test-manifest"
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-common",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-common-test",
+          "version": {
+            "requires": "0.0.336"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlinx",
+              "module": "kotlinx-coroutines-test"
+            }
+          ]
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-data",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "com.seek.android",
+          "module": "core-presentation",
+          "version": {
+            "requires": "0.0.336"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core"
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit"
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules"
+        },
+        {
+          "group": "androidx.test",
+          "module": "runner"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web"
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "excludes": [
+            {
+              "group": "*",
+              "module": "protobuf-lite"
+            }
+          ]
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents"
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-test-junit4"
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho"
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3"
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver"
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing"
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2024.02.01"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-tooling-preview",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-livedata-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-process",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "androidx.activity",
+          "module": "activity-compose",
+          "version": {
+            "requires": "1.8.2"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-compose",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-gradle-plugin",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-runtime",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "com.apollographql.apollo3",
+          "module": "apollo-http-cache",
+          "version": {
+            "requires": "3.8.2"
+          }
+        },
+        {
+          "group": "seek.braid.compose",
+          "module": "braid",
+          "version": {
+            "requires": "8.16.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-compose",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "io.coil-kt",
+          "module": "coil-test",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "au.com.seek.hubble",
+          "module": "hubble-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "au.com.seek.eventcatalogue",
+          "module": "data-tracking-event-catalogue",
+          "version": {
+            "requires": "4.7.0-2-gaf66208"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-api",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-test",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-gradle-plugin",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "io.gitlab.arturbosch.detekt",
+          "module": "detekt-formatting",
+          "version": {
+            "requires": "1.23.5"
+          }
+        },
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "8.2.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-allopen",
+          "version": {
+            "requires": "1.9.22"
+          }
+        },
+        {
+          "group": "joda-time",
+          "module": "joda-time",
+          "version": {
+            "requires": "2.12.7"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-android",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-androidx-compose",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-test",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jmailen.gradle",
+          "module": "kotlinter-gradle",
+          "version": {
+            "requires": "4.2.0"
+          }
+        },
+        {
+          "group": "com.lemonappdev",
+          "module": "konsist",
+          "version": {
+            "requires": "0.13.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "symbol-processing-gradle-plugin",
+          "version": {
+            "requires": "1.9.22-1.0.17"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk-agent-jvm",
+          "version": {
+            "requires": "1.13.9"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi-kotlin",
+          "version": {
+            "requires": "1.15.1"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp-urlconnection",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "adapter-rxjava2",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-moshi",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "robolectric",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "shadows-multidex",
+          "version": {
+            "requires": "4.11.1"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "rules",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.test.ext",
+          "module": "junit",
+          "version": {
+            "requires": "1.1.5"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-contrib",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-core",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-intents",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso",
+          "module": "espresso-web",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.espresso.idling",
+          "module": "idling-concurrent",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.test.uiautomator",
+          "module": "uiautomator",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "orchestrator",
+          "version": {
+            "requires": "1.4.2"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "mockwebserver",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-testing",
+          "version": {
+            "requires": "2.7.7"
+          }
+        },
+        {
+          "group": "androidx.arch.core",
+          "module": "core-testing",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-testing",
+          "version": {
+            "requires": "1.6.2"
+          }
+        },
+        {
+          "group": "com.jraska",
+          "module": "falcon",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.facebook.stetho",
+          "module": "stetho-okhttp3",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber",
+          "version": {
+            "requires": "5.0.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-test-instrumentation-0.0.336-release.aar",
+          "url": "core-test-instrumentation-0.0.336-release.aar",
+          "size": 15431,
+          "sha512": "dcea5c66d4e23db11743c2acbaea43d34357cf18b30a92a08fb22a7f61d911a0417a581773eb3a6c0560af42db34fa3b816cd11978fcd8555e202957f2253394",
+          "sha256": "19746265432fd303b0637b8c107a8a3495a764adfa1df956689f8cce41068f89",
+          "sha1": "4f0145ffc88b83e4e9a92267e9926aaca0e2384f",
+          "md5": "a3fc58bdced37d38d506ec0a20f8bbf3"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantDefaultJavaDocPublication",
+      "attributes": {
+        "com.android.build.api.attributes.BuildTypeAttr": "release",
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "core-test-instrumentation-0.0.336-release-javadoc.jar",
+          "url": "core-test-instrumentation-0.0.336-release-javadoc.jar",
+          "size": 279390,
+          "sha512": "a41b13472b03362c313b747e2f1e61f4ca29a91926a2079e8aa2916ada4a6055198e78db5921ac6ec6424bd1d8f43e1c4fc98bc846ce22195c08a00889180831",
+          "sha256": "026be31dc1a52b25689489cce001e5b1c5d2588526e15bffe32078cd4cb478e6",
+          "sha1": "a036eba17da5639a3fc5e684324ed62342940e52",
+          "md5": "ae7312de1456464644c351a83864274c"
+        }
+      ]
+    }
+  ]
+}

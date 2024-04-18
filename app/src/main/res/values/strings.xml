@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Coding Task</string>
+
+    <string name="search_form_keywords">Keywords</string>
+    <string name="search_form_submit_button">SEEK</string>
+    <string name="search_form_error_max_chars">Max 50 characters</string>
+    <string name="search_form_error_blank">Required field</string>
+
+    <string name="search_results_title">Search Results</string>
+    <string name="search_results_try_again">Try again</string>
+</resources>

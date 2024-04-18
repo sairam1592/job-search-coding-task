@@ -1,0 +1,33 @@
+[versions]
+seek-core = "0.0.336"
+
+kotlin = "1.9.23"
+android-plugin = "8.2.2"
+
+kotlinter = "4.3.0"
+retrofit = "2.10.0"
+composeCompiler = "1.5.11"
+material3 = "1.2.1"
+kotlinxCoroutinesTest = "1.8.0"
+uiTestManifest = "1.6.6"
+
+[libraries]
+seek-core-presentation = { module = "com.seek.android:core-presentation", version.ref = "seek-core" }
+seek-core-presentation-test = { module = "com.seek.android:core-presentation-test", version.ref = "seek-core" }
+seek-core-instrumented-test = { module = "com.seek.android:core-test-instrumentation", version.ref = "seek-core" }
+seek-core-domain = { module = "com.seek.android:core-domain", version.ref = "seek-core" }
+seek-core-domain-test = { module = "com.seek.android:core-domain-test", version.ref = "seek-core" }
+seek-core-data = { module = "com.seek.android:core-data", version.ref = "seek-core" }
+seek-core-data-test = { module = "com.seek.android:core-data-test", version.ref = "seek-core" }
+
+retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
+material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestManifest" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-plugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }

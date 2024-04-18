@@ -1,0 +1,227 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "seek.braid.compose",
+    "module": "braid",
+    "version": "8.16.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "joda-time",
+          "module": "joda-time",
+          "version": {
+            "requires": "2.12.7"
+          }
+        },
+        {
+          "group": "com.google.accompanist",
+          "module": "accompanist-systemuicontroller",
+          "version": {
+            "requires": "0.34.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.23"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "braid-8.16.0.aar",
+          "url": "braid-8.16.0.aar",
+          "size": 14357873,
+          "sha512": "13b35c922256e448c0e891937ea3dc8dec6187d55d6cfcaa8a75c55a9e98498dd4b09d0ca3298464e27fddbcd85bc080961f08f8f17476b9627920a1bb65ab0b",
+          "sha256": "de1022fccab8ce378917e16e3d23fd305356b92f5924c81c0b91d1af6a3d3fbf",
+          "sha1": "ae34834075de061dc3c734d51737641754f23ff9",
+          "md5": "ac0368c0d8f52f4cc31ac01a8fce5fbf"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2024.04.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-text",
+          "version": {
+            "requires": "1.7.0-alpha06"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-tooling"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-util"
+        },
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime"
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3"
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3-window-size-class"
+        },
+        {
+          "group": "androidx.compose.material",
+          "module": "material-icons-core"
+        },
+        {
+          "group": "androidx.compose.material",
+          "module": "material-icons-extended"
+        },
+        {
+          "group": "com.google.accompanist",
+          "module": "accompanist-flowlayout",
+          "version": {
+            "requires": "0.34.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-extensions",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "joda-time",
+          "module": "joda-time",
+          "version": {
+            "requires": "2.12.7"
+          }
+        },
+        {
+          "group": "com.google.accompanist",
+          "module": "accompanist-systemuicontroller",
+          "version": {
+            "requires": "0.34.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.23"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "com.fasterxml.woodstox",
+          "module": "woodstox-core",
+          "version": {
+            "requires": "6.6.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "braid-8.16.0.aar",
+          "url": "braid-8.16.0.aar",
+          "size": 14357873,
+          "sha512": "13b35c922256e448c0e891937ea3dc8dec6187d55d6cfcaa8a75c55a9e98498dd4b09d0ca3298464e27fddbcd85bc080961f08f8f17476b9627920a1bb65ab0b",
+          "sha256": "de1022fccab8ce378917e16e3d23fd305356b92f5924c81c0b91d1af6a3d3fbf",
+          "sha1": "ae34834075de061dc3c734d51737641754f23ff9",
+          "md5": "ac0368c0d8f52f4cc31ac01a8fce5fbf"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "braid-8.16.0-sources.jar",
+          "url": "braid-8.16.0-sources.jar",
+          "size": 76080,
+          "sha512": "a1af536cc12e8122e195328d008c8e7a1a564d4d8aa453302d774c42f1e3f40ddf2f847d01dfd227364ffb856fe572b1a844d1a8e622382793d374d76f768fe9",
+          "sha256": "dbce4793dadc4613d2d1e40fef6a72c005ebf9ebe37eecca0b5e86716044b86e",
+          "sha1": "07eddc4762b6d80f43be0af8543225025b946af9",
+          "md5": "006769377d832d5a3203d61795a6a72a"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "braid-8.16.0-javadoc.jar",
+          "url": "braid-8.16.0-javadoc.jar",
+          "size": 951491,
+          "sha512": "278dd74fd937000b20c3f5577df30d38c9c9e5362e56699a0f74353e81da3ec44eff27f1b72ab19af22a2c11177ba5859ef67c2926b6cdca6a7dd8c2af2d0fea",
+          "sha256": "cdd3e87573f82c5d9f601760be9200c4640a2849064f5578c05f64e0e1c2946e",
+          "sha1": "082a303686d22ff811b471ea3076b6436c49fc96",
+          "md5": "bc03900a8f7da380ef146548e66e863f"
+        }
+      ]
+    }
+  ]
+}

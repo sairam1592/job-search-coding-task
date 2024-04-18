@@ -1,0 +1,32 @@
+{
+  "extends": ["config:base"],
+  "baseBranches": ["master", "renovate-test-branch"],
+  "dependencyDashboard": true,
+  "rangeStrategy": "pin",
+  "automerge": true,
+  "automergeType": "pr",
+  "rebaseWhen": "never",
+  "prBodyNotes": [
+    ":warning: WARNING: Once approved this PR will be merged automatically. Please consider any upcoming releases this might impact."
+  ],
+  "commitMessagePrefix": "minor:",
+  "packageRules": [
+    {
+      "matchBaseBranches": ["master"],
+      "timezone": "Australia/Melbourne",
+      "schedule": ["on the 2nd and 4th day instance on Sunday after 12pm and before 5pm"]
+    },
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "commitMessagePrefix": "patch:"
+    }
+  ]
+}
