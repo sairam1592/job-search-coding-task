@@ -9,6 +9,8 @@ import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import seek.codingtask.jobdetails.JobDetailsScreen
+import seek.codingtask.jobdetails.JobDetailsViewModel
 import seek.codingtask.searchform.presentation.SearchFormScreen
 import seek.codingtask.searchform.presentation.SearchFormViewModel
 import seek.codingtask.searchresults.data.SearchNetworkDataSource
@@ -59,6 +61,10 @@ open class MainApplication : Application() {
 
                     scope<SearchResultsScreen> {
                         viewModelOf(::SearchResultsViewModel)
+                    }
+                    
+                    scope<JobDetailsScreen> {
+                        viewModelOf(::JobDetailsViewModel)
                     }
                 },
             )
