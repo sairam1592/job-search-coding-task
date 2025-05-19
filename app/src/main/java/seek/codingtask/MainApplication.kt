@@ -9,8 +9,12 @@ import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import seek.codingtask.jobdetails.JobDetailsApiClient
 import seek.codingtask.jobdetails.JobDetailsScreen
 import seek.codingtask.jobdetails.JobDetailsViewModel
+import seek.codingtask.jobdetails.data.repository.JobDetailsRepositoryImpl
+import seek.codingtask.jobdetails.domain.repository.JobDetailsRepository
+import seek.codingtask.jobdetails.domain.usecase.GetJobDetailsUseCase
 import seek.codingtask.searchform.presentation.SearchFormScreen
 import seek.codingtask.searchform.presentation.SearchFormViewModel
 import seek.codingtask.searchresults.data.SearchNetworkDataSource
@@ -67,6 +71,22 @@ open class MainApplication : Application() {
                         viewModelOf(::JobDetailsViewModel)
                     }
                 },
+
+                module {
+                    factory<JobDetailsApiClient> {
+                        Retrofit.Builder()
+                            .baseUrl("https://jobsearch-api.cloud.seek.com.au")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build()
+                            .create(JobDetailsApiClient::class.java)
+                    }
+
+                    single<JobDetailsRepository> {
+                        JobDetailsRepositoryImpl(apiClient = get())
+                    }
+
+                    factory { GetJobDetailsUseCase(repository = get()) }
+                }
             )
         }
     }
