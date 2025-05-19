@@ -11,21 +11,24 @@ interface JobDetailsApiClient {
     ): Response<JobDetailsApiResponse>
 }
 
-data class JobDetailsApiResponse(val data: List<JobListing>) {
+data class JobDetailsApiResponse(val data: List<JobListing>?) {
     data class JobListing(
-        val id: String,
-        val title: String,
-        val teaser: String,
-        val advertiser: IdDescription,
-        val bulletPoints: List<String>,
-        val companyName: String,
-        val classifications: List<Classifications>
+        val id: String?,
+        val title: String?,
+        val teaser: String?,
+        val advertiser: IdDescription?,
+        val bulletPoints: List<String?>?,
+        val companyName: String?,
+        val classifications: List<Classifications>?
     )
 
-    data class IdDescription(val id: String, val description: String)
+    data class IdDescription(
+        val id: String?,
+        val description: String?
+    )
 
     data class Classifications(
-        val classification: IdDescription,
-        val subClassification: IdDescription
+        val classification: IdDescription?,
+        val subClassification: IdDescription?
     )
 }

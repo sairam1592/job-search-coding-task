@@ -10,5 +10,5 @@ class GetJobDetailsUseCase(
     private val repository: JobDetailsRepository,
     private val mapper: JobDetailsDtoToDomainMapper
 ) {
-    operator fun invoke(jobId: String): Flow<JobDetailsItem> = repository.getJobDetails(jobId).map { mapper(it) }
+    operator fun invoke(jobId: String): Flow<JobDetailsItem> = repository.getJobDetails(jobId).map { dto -> mapper(dto) }
 }

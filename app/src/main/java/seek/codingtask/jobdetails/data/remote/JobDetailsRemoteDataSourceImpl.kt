@@ -17,15 +17,8 @@ class JobDetailsRemoteDataSourceImpl(
 ) : JobDetailsRemoteDataSource {
 
     override fun getJobDetails(jobId: String): Flow<JobDetailsApiResponse.JobListing> = flow {
-        try {
-            val response = apiClient.getJobsList(jobId)
-            if (response.isSuccessful) {
-                val job = response.body()?.data?.singleOrNull()
-                    ?: throw DomainException(ErrorReason.Errored())
-                emit(job)
-            } else {
-                throw DomainException(ErrorReason.Errored())
-            }
+        val response = try {
+            apiClient.getJobsList(jobId)
         } catch (e: IOException) {
             Timber.e(e, "Network IO exception")
             throw DomainException(ErrorReason.Errored())
@@ -36,5 +29,14 @@ class JobDetailsRemoteDataSourceImpl(
             Timber.e(e, "Unexpected error")
             throw DomainException(ErrorReason.Errored())
         }
+
+        if (!response.isSuccessful) {
+            throw DomainException(ErrorReason.Errored())
+        }
+
+        val job = response.body()?.data?.singleOrNull()
+            ?: throw DomainException(ErrorReason.Errored())
+
+        emit(job)
     }.flowOn(Dispatchers.IO)
 }

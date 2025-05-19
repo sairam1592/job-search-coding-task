@@ -40,7 +40,7 @@ fun JobDetailsSuccessContent(data: JobDetailsItem) {
 
             Text(data.descriptions, Typographies.TextStandard)
 
-            data.bulletPoints.forEach {
+            data.bulletPoints.takeIf { it.isNotEmpty() }?.forEach {
                 Text(it, Typographies.TextStandard)
             }
 
