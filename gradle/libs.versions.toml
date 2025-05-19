@@ -31,7 +31,6 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 chucker-debug = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 chucker-release = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
 
-# Unit testing
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 
