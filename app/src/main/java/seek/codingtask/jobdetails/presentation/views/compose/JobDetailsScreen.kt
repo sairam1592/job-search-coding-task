@@ -1,14 +1,11 @@
-package seek.codingtask.jobdetails
+package seek.codingtask.jobdetails.presentation.views.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.SavedStateHandle
 import com.seek.android.core.navigation.screen.extensions.screenDestinationWithParams
-import com.seek.android.core.presentation.extension.defaultBackAction
 import com.seek.android.core.presentation.mvi.MviScreen
 import com.seek.android.core.presentation.mvi.NavigationAction
 import com.seek.android.core.presentation.mvi.UiEvent
@@ -25,13 +22,10 @@ import seek.braid.compose.components.TopNavigation
 import seek.braid.compose.components.TopNavigationAction
 import seek.braid.compose.theme.Icons
 import seek.braid.compose.theme.Typographies
-import seek.codingtask.R
-import seek.codingtask.searchform.presentation.SearchFormUiEvent
-import seek.codingtask.searchform.presentation.SearchFormUiState
-import seek.codingtask.searchform.presentation.views.SearchFormView
-import seek.codingtask.searchresults.presentation.SearchResultsArgs
+import seek.codingtask.jobdetails.JobDetailsArgs
+import seek.codingtask.jobdetails.presentation.viewmodel.JobDetailsViewModel
 
-class JobDetailsScreen : MviScreen<UiState, UiEvent, NavigationAction> () {
+class JobDetailsScreen : MviScreen<UiState, UiEvent, NavigationAction>() {
     companion object {
         val destination = screenDestinationWithParams<JobDetailsArgs>("job-details")
     }
@@ -54,7 +48,7 @@ class JobDetailsScreen : MviScreen<UiState, UiEvent, NavigationAction> () {
                     )
                 }
             ) {
-                Column(Modifier.padding(12.dp)) {
+                Column(Modifier.Companion.padding(12.dp)) {
                     Text(state.title, Typographies.TextLargeStrong)
                     Text(state.advertiser, Typographies.TextStandard)
 
@@ -74,7 +68,10 @@ class JobDetailsScreen : MviScreen<UiState, UiEvent, NavigationAction> () {
                     Spacer(32.dp)
 
                     Alert(tone = AlertNoticeTone.Caution) {
-                        TextAlertNoticeContent(tone = it, text = "These are real job ads driven from the production search API. Please do not apply to them.")
+                        TextAlertNoticeContent(
+                            tone = it,
+                            text = "These are real job ads driven from the production search API. Please do not apply to them."
+                        )
                     }
                 }
             }

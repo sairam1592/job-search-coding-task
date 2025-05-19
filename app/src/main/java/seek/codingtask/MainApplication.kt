@@ -10,8 +10,8 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import seek.codingtask.jobdetails.JobDetailsApiClient
-import seek.codingtask.jobdetails.JobDetailsScreen
-import seek.codingtask.jobdetails.JobDetailsViewModel
+import seek.codingtask.jobdetails.presentation.views.compose.JobDetailsScreen
+import seek.codingtask.jobdetails.presentation.viewmodel.JobDetailsViewModel
 import seek.codingtask.jobdetails.data.repository.JobDetailsRepositoryImpl
 import seek.codingtask.jobdetails.domain.repository.JobDetailsRepository
 import seek.codingtask.jobdetails.domain.usecase.GetJobDetailsUseCase

@@ -1,4 +1,4 @@
-package seek.codingtask.jobdetails
+package seek.codingtask.jobdetails.presentation.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
 import com.seek.android.core.presentation.flow.SavedStateFlow
@@ -11,6 +11,8 @@ import kotlinx.coroutines.launch
 import kotlinx.parcelize.Parcelize
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import seek.codingtask.jobdetails.JobDetailsApiClient
+import seek.codingtask.jobdetails.presentation.views.compose.JobDetailsScreen
 
 class JobDetailsViewModel(
     savedStateHandle: SavedStateHandle,
@@ -43,7 +45,7 @@ class JobDetailsViewModel(
     init {
         GlobalScope.launch {
             val jobDetails = apiClient
-                .getJobsList(JobDetailsScreen.destination.args(savedStateHandle).jobId)
+                .getJobsList(JobDetailsScreen.Companion.destination.args(savedStateHandle).jobId)
                 .body()!!.data.single()
 
             _uiStateStream.value = JobDetails(
