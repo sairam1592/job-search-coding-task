@@ -14,7 +14,7 @@ class JobDetailsRepositoryImpl(
     private val apiClient: JobDetailsApiClient
 ) : JobDetailsRepository {
 
-    override suspend fun getJobDetails(jobId: String): Flow<JobDetailsItem> = flow {
+    override fun getJobDetails(jobId: String): Flow<JobDetailsItem> = flow {
         try {
             val response = apiClient.getJobsList(jobId)
             if (response.isSuccessful) {

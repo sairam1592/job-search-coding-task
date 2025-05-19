@@ -1,5 +1,7 @@
 package seek.codingtask.jobdetails.domain.model
 
+import java.io.Serializable
+
 data class JobDetailsItem(
     val advertiser: String,
     val bulletPoints: List<String>,
@@ -8,4 +10,4 @@ data class JobDetailsItem(
     val descriptions: String,
     val classification: String,
     val companyName: String
-)
+) : Serializable

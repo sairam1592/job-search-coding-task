@@ -1,37 +1,22 @@
 package seek.codingtask.jobdetails.presentation.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
+import com.seek.android.core.presentation.exceptions.safeLaunch
 import com.seek.android.core.presentation.flow.SavedStateFlow
 import com.seek.android.core.presentation.mvi.MviViewModel
 import com.seek.android.core.presentation.mvi.NavigationAction
-import com.seek.android.core.presentation.mvi.UiEvent
-import com.seek.android.core.presentation.mvi.UiState
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.parcelize.Parcelize
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import seek.codingtask.jobdetails.JobDetailsApiClient
+import kotlinx.coroutines.flow.collectLatest
+import seek.codingtask.jobdetails.domain.usecase.GetJobDetailsUseCase
+import seek.codingtask.jobdetails.presentation.JobDetailsUIEvent
+import seek.codingtask.jobdetails.presentation.JobDetailsUIState
 import seek.codingtask.jobdetails.presentation.views.compose.JobDetailsScreen
 
 class JobDetailsViewModel(
     savedStateHandle: SavedStateHandle,
-) : MviViewModel<UiState, UiEvent, NavigationAction>() {
-    @Parcelize
-    object Loading : UiState
+    private val getJobDetailsUseCase: GetJobDetailsUseCase
+) : MviViewModel<JobDetailsUIState, JobDetailsUIEvent, NavigationAction>() {
 
-    @Parcelize
-    data class JobDetails(
-        val advertiser: String,
-        val bulletPoints: List<String>,
-        val jobId: String,
-        val title: String,
-        val descriptions: String,
-        val classification: String,
-        val companyName: String
-    ) : UiState
-
-    val apiClient: JobDetailsApiClient
+    /*val apiClient: JobDetailsApiClient
         get() {
             val retrofit =
                 Retrofit.Builder()
@@ -40,9 +25,9 @@ class JobDetailsViewModel(
                     .build()
 
             return retrofit.create(JobDetailsApiClient::class.java)
-        }
+        }*/
 
-    init {
+   /* init {
         GlobalScope.launch {
             val jobDetails = apiClient
                 .getJobsList(JobDetailsScreen.Companion.destination.args(savedStateHandle).jobId)
@@ -58,16 +43,37 @@ class JobDetailsViewModel(
                 companyName = jobDetails.companyName
             )
         }
-    }
+    }*/
 
-    override val _uiStateStream: SavedStateFlow<UiState> =
+    override val _uiStateStream: SavedStateFlow<JobDetailsUIState> =
         SavedStateFlow(
             savedStateHandle = savedStateHandle,
             key = "job-details-state",
-            defaultValue = Loading,
+            defaultValue = JobDetailsUIState.Loading,
         )
 
-    override fun process(event: UiEvent) {
+    private val args = JobDetailsScreen.destination.args(savedStateHandle)
 
+    init {
+        fetchJobDetails()
+    }
+
+    private fun fetchJobDetails() {
+        safeLaunch(
+            {
+                getJobDetailsUseCase(args.jobId).collectLatest { result ->
+                    _uiStateStream.value = JobDetailsUIState.Success(result)
+                }
+            },
+            errorProcessor = {
+                _uiStateStream.value = JobDetailsUIState.Error(it.errorReason)
+            }
+        )
+    }
+
+    override fun process(event: JobDetailsUIEvent) {
+        when (event) {
+            JobDetailsUIEvent.Retry -> fetchJobDetails()
+        }
     }
 }

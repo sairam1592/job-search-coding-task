@@ -4,5 +4,5 @@ import kotlinx.coroutines.flow.Flow
 import seek.codingtask.jobdetails.domain.model.JobDetailsItem
 
 interface JobDetailsRepository {
-    suspend fun getJobDetails(jobId: String): Flow<JobDetailsItem>
+    fun getJobDetails(jobId: String): Flow<JobDetailsItem>
 }
