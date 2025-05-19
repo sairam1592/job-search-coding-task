@@ -16,35 +16,6 @@ class JobDetailsViewModel(
     private val getJobDetailsUseCase: GetJobDetailsUseCase
 ) : MviViewModel<JobDetailsUIState, JobDetailsUIEvent, NavigationAction>() {
 
-    /*val apiClient: JobDetailsApiClient
-        get() {
-            val retrofit =
-                Retrofit.Builder()
-                    .baseUrl("https://jobsearch-api.cloud.seek.com.au")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-
-            return retrofit.create(JobDetailsApiClient::class.java)
-        }*/
-
-   /* init {
-        GlobalScope.launch {
-            val jobDetails = apiClient
-                .getJobsList(JobDetailsScreen.Companion.destination.args(savedStateHandle).jobId)
-                .body()!!.data.single()
-
-            _uiStateStream.value = JobDetails(
-                advertiser = jobDetails.advertiser.description,
-                bulletPoints = jobDetails.bulletPoints,
-                jobId = jobDetails.id,
-                title = jobDetails.title,
-                descriptions = jobDetails.teaser,
-                classification = jobDetails.classifications.first().classification.description,
-                companyName = jobDetails.companyName
-            )
-        }
-    }*/
-
     override val _uiStateStream: SavedStateFlow<JobDetailsUIState> =
         SavedStateFlow(
             savedStateHandle = savedStateHandle,
@@ -62,6 +33,7 @@ class JobDetailsViewModel(
         safeLaunch(
             {
                 getJobDetailsUseCase(args.jobId).collectLatest { result ->
+
                     _uiStateStream.value = JobDetailsUIState.Success(result)
                 }
             },

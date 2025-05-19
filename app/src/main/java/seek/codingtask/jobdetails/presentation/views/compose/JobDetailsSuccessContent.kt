@@ -4,7 +4,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.seek.android.core.presentation.ui.SeekPreview
 import com.seek.android.core.presentation.ui.Spacer
+import com.seek.android.core.presentation.ui.ThemedPreviews
 import seek.braid.compose.components.*
 import seek.braid.compose.theme.Icons
 import seek.braid.compose.theme.Typographies
@@ -22,7 +24,10 @@ fun JobDetailsSuccessContent(data: JobDetailsItem) {
             )
         }
     ) {
-        Column(Modifier.padding(12.dp)) {
+        Column(Modifier.padding(20.dp)) {
+
+            Spacer(100.dp)
+
             Text(data.title, Typographies.TextLargeStrong)
             Text(data.advertiser, Typographies.TextStandard)
 
@@ -49,4 +54,20 @@ fun JobDetailsSuccessContent(data: JobDetailsItem) {
             }
         }
     }
+}
+
+@ThemedPreviews
+@Composable
+private fun PreviewSuccessContent() = SeekPreview {
+    JobDetailsSuccessContent(
+        data = JobDetailsItem(
+            jobId = "12345",
+            title = "Senior Android Developer",
+            advertiser = "SEEK",
+            descriptions = "You will be building scalable mobile experiences.",
+            classification = "Information & Communication Technology",
+            companyName = "SEEK Tech Ltd.",
+            bulletPoints = listOf("Kotlin", "Jetpack Compose", "MVVM", "Clean Architecture")
+        )
+    )
 }

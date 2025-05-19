@@ -32,7 +32,6 @@ fun SearchResultsLoadingView() {
 
 @ThemedPreviews
 @Composable
-private fun Preview() =
-    SeekPreview {
-        SearchResultsLoadingView()
-    }
+private fun Preview() = SeekPreview {
+    SearchResultsLoadingView()
+}

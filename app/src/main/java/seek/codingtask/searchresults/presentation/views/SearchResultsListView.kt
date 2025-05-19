@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.seek.android.core.presentation.extension.defaultBackAction
 import com.seek.android.core.presentation.extension.withoutBottomPadding
 import com.seek.android.core.presentation.ui.SeekPreview
@@ -39,6 +40,11 @@ fun SearchResultsListView(
                 .padding(horizontal = Spacings.medium),
             verticalArrangement = Arrangement.spacedBy(Spacings.medium),
         ) {
+
+            item {
+                Spacer(30.dp)
+            }
+
             items(items) { item ->
                 SearchResultsItemView(
                     item = item,

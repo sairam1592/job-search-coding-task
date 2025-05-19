@@ -64,6 +64,11 @@ dependencies {
     implementation(libs.retrofit2)
     implementation(libs.retrofit2.gson)
 
+    implementation(libs.timber)
+
+    debugImplementation(libs.chucker.debug)
+    releaseImplementation(libs.chucker.release)
+
     testImplementation(libs.seek.core.presentation.test)
     testImplementation(libs.seek.core.domain.test)
     testImplementation(libs.seek.core.data.test)
@@ -74,4 +79,10 @@ dependencies {
         exclude(group = "com.google.guava")
         exclude(group = "javax.inject")
     }
+
+    testImplementation(libs.junit.api)
+    testRuntimeOnly(libs.junit.engine)
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.mockk.android)
 }

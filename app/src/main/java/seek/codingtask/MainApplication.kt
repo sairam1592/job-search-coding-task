@@ -1,7 +1,9 @@
 package seek.codingtask
 
 import android.app.Application
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.seek.android.core.common.tracking.TrackingTool
+import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.context.startKoin
@@ -10,11 +12,14 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import seek.codingtask.jobdetails.JobDetailsApiClient
-import seek.codingtask.jobdetails.presentation.views.compose.JobDetailsScreen
-import seek.codingtask.jobdetails.presentation.viewmodel.JobDetailsViewModel
+import seek.codingtask.jobdetails.data.mapper.JobDetailsDtoToDomainMapper
+import seek.codingtask.jobdetails.data.remote.JobDetailsRemoteDataSource
+import seek.codingtask.jobdetails.data.remote.JobDetailsRemoteDataSourceImpl
 import seek.codingtask.jobdetails.data.repository.JobDetailsRepositoryImpl
 import seek.codingtask.jobdetails.domain.repository.JobDetailsRepository
 import seek.codingtask.jobdetails.domain.usecase.GetJobDetailsUseCase
+import seek.codingtask.jobdetails.presentation.viewmodel.JobDetailsViewModel
+import seek.codingtask.jobdetails.presentation.views.compose.JobDetailsScreen
 import seek.codingtask.searchform.presentation.SearchFormScreen
 import seek.codingtask.searchform.presentation.SearchFormViewModel
 import seek.codingtask.searchresults.data.SearchNetworkDataSource
@@ -66,7 +71,7 @@ open class MainApplication : Application() {
                     scope<SearchResultsScreen> {
                         viewModelOf(::SearchResultsViewModel)
                     }
-                    
+
                     scope<JobDetailsScreen> {
                         viewModelOf(::JobDetailsViewModel)
                     }
@@ -74,18 +79,29 @@ open class MainApplication : Application() {
 
                 module {
                     factory<JobDetailsApiClient> {
+                        val client = OkHttpClient.Builder()
+                            .addInterceptor(ChuckerInterceptor(androidContext()))
+                            .build()
+
                         Retrofit.Builder()
                             .baseUrl("https://jobsearch-api.cloud.seek.com.au")
+                            .client(client)
                             .addConverterFactory(GsonConverterFactory.create())
                             .build()
                             .create(JobDetailsApiClient::class.java)
                     }
 
-                    single<JobDetailsRepository> {
-                        JobDetailsRepositoryImpl(apiClient = get())
+                    factory<JobDetailsRemoteDataSource> {
+                        JobDetailsRemoteDataSourceImpl(apiClient = get())
                     }
 
-                    factory { GetJobDetailsUseCase(repository = get()) }
+                    single<JobDetailsRepository> {
+                        JobDetailsRepositoryImpl(remoteDataSource = get())
+                    }
+
+                    factory { JobDetailsDtoToDomainMapper() }
+
+                    factory { GetJobDetailsUseCase(repository = get(), get()) }
                 }
             )
         }

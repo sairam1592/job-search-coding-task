@@ -52,7 +52,6 @@ fun SearchResultsErrorView(
 
 @ThemedPreviews
 @Composable
-private fun Preview() =
-    SeekPreview {
-        SearchResultsErrorView(ErrorReason.Errored(), {})
-    }
+private fun Preview() = SeekPreview {
+    SearchResultsErrorView(ErrorReason.Errored(), {})
+}
