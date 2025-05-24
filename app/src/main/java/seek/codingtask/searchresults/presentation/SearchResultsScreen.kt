@@ -9,8 +9,7 @@ import seek.codingtask.searchresults.presentation.views.SearchResultsErrorView
 import seek.codingtask.searchresults.presentation.views.SearchResultsListView
 import seek.codingtask.searchresults.presentation.views.SearchResultsLoadingView
 
-class SearchResultsScreen :
-    MviScreen<SearchResultsUiState, SearchResultsUiEvent, SearchResultsNavAction>() {
+class SearchResultsScreen : MviScreen<SearchResultsUiState, SearchResultsUiEvent, SearchResultsNavAction>() {
     companion object {
         val destination = screenDestinationWithParams<SearchResultsArgs>("search-results")
     }
@@ -41,7 +40,5 @@ class SearchResultsScreen :
     }
 
     @Composable
-    override fun resolveViewModel(scope: Scope): SearchResultsViewModel {
-        return koinViewModel(scope = scope)
-    }
+    override fun resolveViewModel(scope: Scope): SearchResultsViewModel = koinViewModel(scope = scope)
 }

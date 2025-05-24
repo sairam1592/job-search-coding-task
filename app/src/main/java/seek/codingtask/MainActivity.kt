@@ -1,7 +1,7 @@
 package seek.codingtask
 
 import com.seek.android.core.presentation.mvi.MviActivity
-import seek.codingtask.jobdetails.JobDetailsScreen
+import seek.codingtask.jobdetails.presentation.views.compose.JobDetailsScreen
 import seek.codingtask.searchform.presentation.SearchFormScreen
 import seek.codingtask.searchresults.presentation.SearchResultsScreen
 

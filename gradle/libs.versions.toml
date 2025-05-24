@@ -11,6 +11,12 @@ material3 = "1.2.1"
 kotlinxCoroutinesTest = "1.8.0"
 uiTestManifest = "1.6.6"
 
+timber = "5.0.1"
+chucker = "4.0.0"
+
+mockk = "1.13.10"
+junit = "5.10.1"
+
 [libraries]
 seek-core-presentation = { module = "com.seek.android:core-presentation", version.ref = "seek-core" }
 seek-core-presentation-test = { module = "com.seek.android:core-presentation-test", version.ref = "seek-core" }
@@ -19,6 +25,18 @@ seek-core-domain = { module = "com.seek.android:core-domain", version.ref = "see
 seek-core-domain-test = { module = "com.seek.android:core-domain-test", version.ref = "seek-core" }
 seek-core-data = { module = "com.seek.android:core-data", version.ref = "seek-core" }
 seek-core-data-test = { module = "com.seek.android:core-data-test", version.ref = "seek-core" }
+
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
+chucker-debug = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
+chucker-release = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
+
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
+
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+
 
 retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
